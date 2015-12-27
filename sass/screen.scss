@@ -1,0 +1,34 @@
+// @import "compass/reset";
+
+@import 'px2rem';
+
+$designWidth: 750;
+
+@import "../images/icons/*.png";
+
+// if you need all icon
+// @include all-icons-sprites;
+
+// if you need single icon
+nav{
+	li.contact{
+		@include icons-sprite(contact);
+	}
+}
+
+nav{
+	li.contact:hover{
+		@include icons-sprite(contact);
+	}
+}
+
+// if you need set icon width and height
+nav{
+	li.contact{
+		@include icons-sprite(contact);
+		width: px2rem(icons-sprite-width(contact));
+		height: px2rem(icons-sprite-height(contact));
+	}
+}
+
+
