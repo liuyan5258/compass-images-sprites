@@ -1,3 +1,34 @@
-@function px2rem( $px ){
-  @return $px / 1px *320/$designWidth/20 + rem;
+// this is psd width
+$designWidth: 750;
+
+// 这里是设计稿的实际大小，等雪碧图生成后需要手动补上
+$bigWidth: 128px;
+$bigHeight: 326px;
+
+@function px2rem ($px) {
+	@if (type-of($px) == "number") {
+		@return $px / 1px * 320 / $designWidth / 20 * 1rem;
+		@return $px / 64px * 1rem;
+	}
+	
+	@if (type-of($px) == "list") {
+  		@if (nth($px, 1) == 0 and nth($px, 2) != 0) {
+    		@return 0 nth($px, 2) / 1px * 320 / $designWidth / 20 * 1rem;
+  		} @else if (nth($px, 1) == 0 and nth($px, 2) == 0)  {
+    		@return 0 0;
+  		} @else if (nth($px, 1) != 0 and nth($px, 2) == 0) {
+    		@return nth($px, 1) / 1px * 320 / $designWidth / 20 * 1rem 0;
+  		} @else {
+    		@return nth($px, 1) / 1px * 320 / $designWidth / 20 * 1rem nth($px, 2) / 1px * 320 / $designWidth / 20 * 1rem;
+  		}
+	}
+}
+
+@mixin sprite-info ($icons, $name) {
+	width: px2rem(image-width(sprite-file($icons, $name)));
+	height: px2rem(image-height(sprite-file($icons, $name)));
+	background-image: sprite-url($icons);
+	background-position: px2rem(sprite-position($icons, $name));
+	background-size: px2rem(($bigWidth, $bigHeight));
+	background-repeat: no-repeat;
 }

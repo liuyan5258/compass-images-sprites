@@ -1,34 +1,24 @@
 // @import "compass/reset";
+// 
+// about sprite-layouts : http://compass-style.org/help/tutorials/spriting/sprite-layouts/
+// [diagonal]:左下右上对角排列
+// [horizontal]:水平排列
+// [vertical]:垂直排列
+// [smart]:比较灵活的一种排列方式
+// [spacing]:每个小图之间的间隙
+// 
+$icons: sprite-map("../images/icons/*.png", $spacing: 1px, $layout: vertical);
 
 @import 'px2rem';
 
-$designWidth: 750;
-
-@import "../images/icons/*.png";
-
-// if you need all icon
-// @include all-icons-sprites;
-
-// if you need single icon
 nav{
 	li.contact{
-		@include icons-sprite(contact);
+		@include sprite-info($icons, contact);
+	}
+	li.key{
+		@include sprite-info($icons, key);
 	}
 }
 
-nav{
-	li.contact:hover{
-		@include icons-sprite(contact);
-	}
-}
-
-// if you need set icon width and height
-nav{
-	li.contact{
-		@include icons-sprite(contact);
-		width: px2rem(icons-sprite-width(contact));
-		height: px2rem(icons-sprite-height(contact));
-	}
-}
 
 
