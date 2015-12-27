@@ -26,7 +26,6 @@
 		@function px2rem ($px) {
 			@if (type-of($px) == "number") {
 				@return $px / 1px * 320 / $designWidth / 20 * 1rem;
-				@return $px / 64px * 1rem;
 			}
 			
 			@if (type-of($px) == "list") {
