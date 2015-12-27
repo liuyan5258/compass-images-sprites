@@ -7,7 +7,7 @@
 // [smart]:比较灵活的一种排列方式
 // [spacing]:每个小图之间的间隙
 // 
-$icons: sprite-map("../images/icons/*.png", $spacing: 1px, $layout: vertical);
+$icons: sprite-map("icons/*.png", $spacing: 1px, $layout: vertical);
 
 @import 'px2rem';
 
