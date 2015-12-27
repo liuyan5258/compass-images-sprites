@@ -75,8 +75,8 @@
 
 4. 自动编译后在css中的样子
 
-		nav li.contact { width: 0.68267rem; height: 0.68267rem; background-image: url('/images/../images/icons-s11a22e331e.png'); background-position: 0 -2.752rem; background-size: 2.73067rem 6.95467rem; background-repeat: no-repeat; }
-		nav li.key { width: 0.68267rem; height: 0.68267rem; background-image: url('/images/../images/icons-s11a22e331e.png'); background-position: 0 -3.456rem; background-size: 2.73067rem 6.95467rem; background-repeat: no-repeat; }
+		nav li.contact { width: 0.68267rem; height: 0.68267rem; background-image: url('/images/icons-s11a22e331e.png'); background-position: 0 -2.752rem; background-size: 2.73067rem 6.95467rem; background-repeat: no-repeat; }
+		nav li.key { width: 0.68267rem; height: 0.68267rem; background-image: url('/images/icons-s11a22e331e.png'); background-position: 0 -3.456rem; background-size: 2.73067rem 6.95467rem; background-repeat: no-repeat; }
 
 
 5. 如果你用了hotcss来做页面的适配，需要在你用到的html中加入以下代码：
